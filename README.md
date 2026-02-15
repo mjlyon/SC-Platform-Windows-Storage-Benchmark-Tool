@@ -1,4 +1,4 @@
-# Storage Perf Harness (`virtio-scsi` vs `virtio-blk`)
+# SC Windows Storage Benchmarking
 
 This repo now contains two benchmark harnesses:
 

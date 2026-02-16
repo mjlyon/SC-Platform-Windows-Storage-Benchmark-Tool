@@ -1344,7 +1344,7 @@ function Run-Benchmark {
     foreach ($wl in $workloads) {
         for ($iter = 1; $iter -le $Repeat; $iter++) {
             $idx++
-            Write-Host "[$idx/$totalRuns] $($wl.name) (iter $iter/$Repeat) ..."
+            Write-Host "[$idx/$totalRuns] $($wl.name) (iteration $iter/$Repeat) ..."
             $row = Run-Workload -DiskSpdExe $diskspdExe -Workload $wl -Iteration $iter -TargetPath $TargetPath -Size $Size -DurationSeconds $DurationSeconds -WarmupSeconds $WarmupSeconds -RequestedDisk $DiskInstance -ExtraDiskSpdArg $ExtraDiskSpdArg -RawDir $rawDir
             $rows += [pscustomobject]$row
             if (-not [string]::IsNullOrWhiteSpace($row.fio_error)) {
